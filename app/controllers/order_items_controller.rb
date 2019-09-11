@@ -7,7 +7,7 @@ class OrderItemsController < ApplicationController
             order_item_params[:product_id] == item.product_id
         end
         if found_item
-            found_item.quantity += 1
+            # found_item.quantity += 1
             found_item.quantity += order_item_params[:quantity].to_i
             found_item.item_price = found_item.quantity * found_item.product.price_in_cents
             found_item.save
